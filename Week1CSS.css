@@ -1,12 +1,5 @@
 #container {
-  min-width: 3px;
+  min-width: 310px;
   height: 400px;
-}
-
-*{
-	padding: 0;
-
-}
-body {
-	width: 100%;
+  margin: 0 auto;
 }
