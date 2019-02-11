@@ -1,5 +1,100 @@
-#container {
-  min-width: 310px;
-  height: 400px;
-  margin: 0 auto;
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: black;
+  font-size: 1.2em;
+  line-height: 1em;
+}
+
+
+
+.box
+{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 300px;
+  background: transparent;
+
+
+}
+
+.box .skill
+{
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.box .skill .graph
+{
+  position: absolute;
+  width: 40px;
+  background: black;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+.box .skill .graph .percent
+{
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.box .skill .skillName
+{
+  position: absolute;
+  bottom: -30px;
+  left:50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+body{
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 2px;
+}
+
+.area{
+  opacity:0;
+  fill: #3498db;
+}
+.circle{
+  stroke: #3498db;
+  fill: #fff;
+  stroke-width: 2px;
+}
+.circle.active{
+  stroke-width: 3px;
+}
+.bubble rect{
+  stroke: #3498db;
+  fill: #fff;
+}
+.bubble text{
+  font-size: 12px;
 }
