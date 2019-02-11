@@ -1,0 +1,9 @@
+#container {
+  min-width: 3px;
+  height: 400px;
+}
+
+*{
+	padding: 0;
+
+}
