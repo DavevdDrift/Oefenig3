@@ -4,59 +4,68 @@
 	<title>Challenge1</title>
 	<meta charset="utf-8">
 	<link type="text/css" href="Week1CSS.css" rel="stylesheet">
+
 </head>
 
 <body>
-	<div id="piechart" style="width: 900px; height: 500px;"></div>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-<section>
-      <div class="box">
-        <div class="skill">
-          <div class="graph html" style="height:50%;">
-            <div class="percent">50%</div>
-            <div class="skillName">HTML</div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="graph" style="height:80%;">
-            <div class="percent">80%</div>
-            <div class="skillName">CCS</div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="graph" style="height:10%;">
-            <div class="percent">10%</div>
-            <div class="skillName">Javascript</div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="graph" style="height:60%;">
-            <div class="percent">60%</div>
-            <div class="skillName">PS</div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="graph" style="height:75%;">
-            <div class="percent">75%</div>
-            <div class="skillName">AI</div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="graph" style="height:55%;">
-            <div class="percent">55%</div>
-            <div class="skillName">PS4</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-	<div class="chart-container"></div>
+<div class="grid-container">
+
+<div id="logo">
+<img class="AfbeeldingLogo" alt="LogoSpaceX" src="Images/SpaceX.png">
+</div>
+
+
+<div id="kopje1">
+<h2 class="kopje1">Fuel</h2>
+</div>
+
+
+<div id="piechart"></div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+<div id="kopje2">
+<h2 class="kopje2">Gravity</h2>
+</div>
+
+<div id="gravity">
+	<section class="boxlijst">
+		<div class="box">
+		  <div class="skill">
+			 <div class="graph1">
+				<div class="percent">9.807m/s²</div>
+				<div class="skillName">Earth</div>
+			 </div>
+		  </div>
+		  <div class="skill">
+			 <div class="graph2">
+				<div class="percent">1.62m/s²</div>
+				<div class="skillName">Moon</div>
+			 </div>
+		  </div>
+		  <div class="skill">
+			 <div class="graph3">
+				<div class="percent">3.711m/s²</div>
+				<div class="skillName">Mars</div>
+			 </div>
+		  </div>
+	 </section>
+</div>
+
+
+<div id="kopje3">
+<h2 class="kopje3">Estimated speed</h2>
+</div>
+
+<div class="chart-container"></div>
 
 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src='https://d3js.org/d3.v3.min.js'></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 	<script  src="Week1JS.js"></script>
+
+</div>
 
 </body>
 </html>

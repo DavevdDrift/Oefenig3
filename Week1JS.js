@@ -4,16 +4,19 @@
         function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Task', 'Amount of fuel'],
+          ['Empty',     5000000],
+          ['Full',      15000000],
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'none',
+          colors: ['#000920', '#00F0FF',],
+          backgroundColor: '#000920',
+          pieSliceBorderColor: '#00F0FF',
+          pieSliceTextStyle: {color: '#FFFFFF', fontSize: '32', fontName: 'Roboto',},
+          legend: 'none',
+          chartArea: {width:'95%',height:'95%'},
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -21,221 +24,48 @@
         chart.draw(data, options);
       }
 
-      var data1 = [
-  {
-    date  : '2006-02-22',
-    value : 950
-  },
-  {
-    date  : '2006-08-22',
-    value : 1000
-  },
-  {
-    date  : '2007-01-11',
-    value : 700
-  },
-  {
-    date  : '2008-10-01',
-    value : 534
-  },
-  {
-    date  : '2009-02-24',
-    value : 1423
-  },
-  {
-    date  : '2010-12-30',
-    value : 1222
-  },
-  {
-    date  : '2011-05-15',
-    value : 948
-  },
-  {
-    date  : '2012-04-02',
-    value : 1938
-  },
-  {
-    date  : '2013-08-19',
-    value : 1245
-  },
-  {
-    date  : '2013-11-11',
-    value : 888
-  }
-];
-
-var data2 = [
-  {
-    date  : '2005-02-22',
-    value : 950
-  },
-  {
-    date  : '2006-08-22',
-    value : 1000
-  },
-  {
-    date  : '2007-01-11',
-    value : 700
-  },
-  {
-    date  : '2008-10-01',
-    value : 534
-  },
-  {
-    date  : '2009-02-24',
-    value : 1423
-  },
-  {
-    date  : '2010-12-30',
-    value : 1222
-  },
-  {
-    date  : '2011-05-15',
-    value : 948
-  },
-  {
-    date  : '2012-04-02',
-    value : 1938
-  },
-  {
-    date  : '2013-08-19',
-    value : 1245
-  },
-  {
-    date  : '2015-11-11',
-    value : 2000
-  },
-  {
-    date  : '2016-03-16',
-    value : 4500
-  }
-];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var data1 = [
   {
-    date  : '2006-02-22',
-    value : 950
+    date  : '2019-01-01',
+    value : 0
   },
   {
-    date  : '2006-08-22',
-    value : 1000
+    date  : '2019-01-10',
+    value : 19000
   },
   {
-    date  : '2007-01-11',
-    value : 700
+    date  : '2019-03-10',
+    value : 28000
   },
   {
-    date  : '2008-10-01',
-    value : 534
+    date  : '2019-06-15',
+    value : 32000
   },
   {
-    date  : '2009-02-24',
-    value : 1423
+    date  : '2019-07-24',
+    value : 32500
   },
   {
-    date  : '2010-12-30',
-    value : 1222
+    date  : '2019-08-30',
+    value : 32500
   },
   {
-    date  : '2011-05-15',
-    value : 948
+    date  : '2019-09-15',
+    value : 28000
   },
   {
-    date  : '2012-04-02',
-    value : 1938
+    date  : '2019-10-28',
+    value : 0
   },
-  {
-    date  : '2013-08-19',
-    value : 1245
-  },
-  {
-    date  : '2013-11-11',
-    value : 888
-  }
+
 ];
 
-var data2 = [
-  {
-    date  : '2005-02-22',
-    value : 950
-  },
-  {
-    date  : '2006-08-22',
-    value : 1000
-  },
-  {
-    date  : '2007-01-11',
-    value : 700
-  },
-  {
-    date  : '2008-10-01',
-    value : 534
-  },
-  {
-    date  : '2009-02-24',
-    value : 1423
-  },
-  {
-    date  : '2010-12-30',
-    value : 1222
-  },
-  {
-    date  : '2011-05-15',
-    value : 948
-  },
-  {
-    date  : '2012-04-02',
-    value : 1938
-  },
-  {
-    date  : '2013-08-19',
-    value : 1245
-  },
-  {
-    date  : '2015-11-11',
-    value : 2000
-  },
-  {
-    date  : '2016-03-16',
-    value : 4500
-  }
-];
 
 $(document).ready(function(){
   init();
   render();
-
-  d3.select('#toggleData').on('click', function(){
-    if(currentData == 'data1'){
-      updateData(data2);
-      currentData = 'data2';
-    }
-    else if(currentData == 'data2'){
-      updateData(data1);
-      currentData = 'data1';
-    }
-  });
+    updateData(data1);
 
   d3.select(window).on('resize', function(){
     resize();
@@ -262,6 +92,39 @@ var maxWidth = 800 - margin.left - margin.right;
 var detailWidth  = 150;
 var detailHeight = 75;
 var detailMargin = 15;
+
+  var options = {
+  annotations: {
+    boxStyle: {
+      // Color of the box outline.
+      stroke: '#888',
+      // Thickness of the box outline.
+      strokeWidth: 1,
+      // x-radius of the corner curvature.
+      rx: 10,
+      // y-radius of the corner curvature.
+      ry: 10,
+      // Attributes for linear gradient fill.
+      gradient: {
+        // Start color for gradient.
+        color1: '#fbf6a7',
+        // Finish color for gradient.
+        color2: '#33b679',
+        // Where on the boundary to start and
+        // end the color1/color2 gradient,
+        // relative to the upper left corner
+        // of the boundary.
+        x1: '0%', y1: '0%',
+        x2: '100%', y2: '100%',
+        // If true, the boundary for x1,
+        // y1, x2, and y2 is the box. If
+        // false, it's the entire chart.
+        useObjectBoundingBoxUnits: true
+      }
+    }
+  }
+};
+
 
 function init(){
   chartContainer = d3.select('.chart-container');
@@ -331,7 +194,7 @@ function render(){
     .attr('transform', 'rotate(-90)')
     .attr('y', '1.5em')
     .style('text-anchor', 'end')
-    .text('Price ($)');
+    .text('Speed (Km/h)');
 
   marginContainer.append( 'path' )
     .datum( startData )
@@ -366,6 +229,14 @@ function render(){
       }
     } );
 }
+
+
+
+
+
+
+
+
 
 function drawCircle( datum, index ) {
   circleContainer.datum( datum )
@@ -474,11 +345,11 @@ function showCircleDetail( data ) {
   var dateFormat = d3.time.format("%m/%d/%Y");
 
   text.append( 'tspan' )
-    .attr( 'class', 'price' )
+    .attr( 'class', 'Speed (Km/h)' )
     .attr( 'x', detailWidth / 2 )
     .attr( 'y', detailHeight / 3 )
     .attr( 'text-anchor', 'middle' )
-    .text( 'Price: ' + data.value );
+    .text( 'Speed (Km/h): ' + data.value );
 
   text.append( 'tspan' )
     .attr( 'class', 'date' )

@@ -1,27 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+  src: url(roboto-ultra-thin.woff) format('WOFF')
+}
+*{
+  color: white;
+}
+
 body
 {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: black;
+  color: white;
   font-size: 1.2em;
   line-height: 1em;
+  background-color: #000920;
 }
+
+.grid-container{
+  left: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+   "box0"
+   "box1"
+   "box2"
+   "box3"
+   "box4"
+   "box5"
+   "box6";
+} 
+
+#logo{
+  grid-area: box0;
+}
+
+#kopje1{
+  grid-area: box1;
+}
+
+#piechart{
+  grid-area: box2;
+}
+
+#kopje2{
+  grid-area: box3;
+}
+
+#gravity{
+  grid-area: box4;
+}
+
+#kopje3{
+  grid-area: box5;
+}
+
+.chart-container{
+  grid-area: box6;
+}
+
+
+
+.grid-container{
+  grid-template-columns: 1fr;
+  grid-template-areas:
+   "box0"  
+   "box1"
+   "box2"
+   "box3"
+   "box4"
+   "box5"
+   "box6";
+} 
 
 
 
 .box
 {
   display: flex;
-  position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 550px;
-  height: 300px;
+  height: 384px;
+  width: 358px;
   background: transparent;
-
-
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .box .skill
@@ -35,7 +101,7 @@ body
 {
   position: absolute;
   width: 40px;
-  background: black;
+  background: white;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -50,8 +116,7 @@ body
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: black;
-  font-weight: bold;
+  color: white;
 }
 
 .box .skill .skillName
@@ -69,13 +134,20 @@ body{
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
 }
+
+.axis path{
+  stroke: #00F0FF;
+}
+
+.axis text{
+  fill: white;
+  font-size: 6px;
+} 
 
 .line {
   fill: none;
-  stroke: #3498db;
+  stroke: #00F0FF;
   stroke-width: 2px;
 }
 
@@ -84,7 +156,7 @@ body{
   fill: #3498db;
 }
 .circle{
-  stroke: #3498db;
+  stroke: white;
   fill: #fff;
   stroke-width: 2px;
 }
@@ -92,9 +164,536 @@ body{
   stroke-width: 3px;
 }
 .bubble rect{
-  stroke: #3498db;
+  stroke: white;
   fill: #fff;
 }
 .bubble text{
   font-size: 12px;
+}
+
+#piechart{
+	width: 333px; 
+	height: 333px;
+  margin-left: 12px;
+  margin-top: 10px;
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.graph1{
+	height: 316px
+}
+
+.graph2{
+	height: 41px
+}
+
+
+.graph3{
+	height: 120px
+}
+
+
+.box .skill .graph1
+{
+  position: absolute;
+  width: 107px;
+  background: #00F0FF;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+}
+
+
+.box .skill .graph1 .percent
+{
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.box .skill .graph2
+{
+  position: absolute;
+  width: 107px;
+  background: #00F0FF;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+}
+
+
+
+.box .skill .graph2 .percent
+{
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.box .skill .graph3
+{
+  position: absolute;
+  width: 107px;
+  background: #00F0FF;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+}
+
+
+
+.box .skill .graph3 .percent
+{
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+
+.chart-container{
+  width: 358px;
+  height: 326px;
+  color: white;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+#Gravity{
+  left: 50%;
+}
+
+.tick{
+  color: white;
+}
+
+#kopje1{
+  border-bottom: 2px solid #00F0FF;
+  text-align: center;
+  width: 360px;
+  font-size: 22px;
+}
+
+#kopje2{
+  border-bottom: 2px solid #00F0FF;
+  text-align: center;
+  width: 360px;
+  font-size: 22px;
+}
+
+#kopje3{
+  border-bottom: 2px solid #00F0FF;
+  text-align: center;
+  width: 360px;
+  margin-top: 45px;
+  font-size: 22px;
+}
+
+.kopje1{
+    margin-bottom: 0px;
+    font-family: Roboto;
+    font-weight: 100;
+    font-style: normal;
+    border-width: 20px;
+}
+
+.kopje2{
+    margin-bottom: 0px;
+    font-family: Roboto;
+    font-weight: 100;
+    font-style: normal;
+    border-width: 20px;
+}
+
+.kopje3{
+    margin-bottom: 0px;
+    font-family: Roboto;
+    font-weight: 100;
+    font-style: normal;
+    border-width: 20px;
+}
+
+#logo{
+  margin-left: 90px;
+  margin-top: 5px;
+  size: 40px;
+}
+
+.percent{
+    font-family: Roboto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.AfbeeldingLogo{
+  width: 200px;
+}
+
+
+
+@media only screen and (min-width: 361px) {
+  
+.AfbeeldingLogo{
+  width: 400px;
+  margin-top: 5px;
+}
+
+.kopje1{
+  font-size: 48px;
+}
+
+.kopje2{
+  font-size: 48px;
+}
+
+.kopje3{
+  font-size: 48px;
+}
+
+
+.AfbeeldingLogo{
+  margin-left: 13%
+}
+
+#kopje1
+{
+margin-left: 21%;
+}
+
+#piechart
+{
+margin-left: 21%;
+}
+#kopje2
+{
+margin-left: 21%;
+}
+#gravity
+{
+margin-left: 11%;
+}
+#kopje3
+{
+margin-left: 20%;
+}
+.chart-container
+{
+margin-left: 2%;
+width: 731px;
+height: 666px;
+}
+
+
+
+
+
+.axis text{
+  fill: white;
+  font-size: 10px;
+} 
+
+.line {
+  fill: none;
+}
+
+.circle{
+  stroke: white;
+  fill: #fff;
+  stroke-width: 4px;
+}
+
+
+.bubble rect{
+  stroke: white;
+  fill: #fff;
+}
+
+.bubble text{
+  font-size: 12px;
+}
+
+
+#piechart{
+  width: 448px; 
+  height: 448px;
+  margin-left: 16%;
+  margin-top: 10px;
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.box
+{
+  height: 549px;
+  width: 559px;
+  background: transparent;
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+.graph1{
+  height: 316px
+}
+
+.graph2{
+  height: 41px
+}
+
+
+.graph3{
+  height: 120px
+}
+
+
+.box .skill .graph1
+{
+	width: 172px;
+	height: 471px;
+	font-size: 32px;   
+}
+
+.box .skill .graph2
+{
+	width: 172px; 
+	height: 61px;
+	font-size: 32px; 
+}
+
+.box .skill .graph3
+{
+	width: 172px; 
+	height: 179px;
+	font-size: 32px; 
+}
+
+.box .skill .graph1 .percent
+{
+ font-size: 24px;
+ top: -30px;  
+}
+
+
+.box .skill .graph2 .percent
+{
+  font-size: 24px;
+  top: -30px; 	
+}
+
+.box .skill .graph3 .percent
+{
+  font-size: 24px; 
+  top: -30px;
+}
+
+.box .skill .skillName
+{
+  bottom: -40px;
+}
+}
+
+
+
+
+
+
+@media only screen and (min-width: 769px) {
+
+.grid-container{
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+	 "box0 box0"
+	 "box1 box3"
+	 "box2 box4"
+	 "box5 box5"
+	 "box6 box6";
+}
+
+.chart-container{
+	margin-left: 24%;
+}
+
+#kopje3{
+	margin-left: 38%;
+}
+
+.AfbeeldingLogo{
+	margin-left: 30%;
+	width: 500px;
+}
+
+#logo{
+	margin-left: 72px;
+}
+
+}
+
+@media only screen and (min-width: 1367px) {   
+
+
+.AfbeeldingLogo{
+	margin-left: 33%;
+	width: 600px;
+}
+
+
+
+.chart-container
+{
+margin-left: 29%;
+width: 937px;
+height: 854px;
+}
+
+
+.axis text{
+  fill: white;
+  font-size: 10px;
+} 
+
+.line {
+  fill: none;
+  stroke-width: 2px;  
+}
+
+.circle{
+  stroke: white;
+  fill: #fff;
+  stroke-width: 4px;
+}
+
+
+.bubble rect{
+  stroke: white;
+  fill: #fff;
+}
+
+.bubble text{
+  font-size: 12px;
+}
+
+#kopje3{
+	margin-left: 39%;
+}
+
+
+.kopje1{
+  font-size: 52px;
+}
+
+.kopje2{
+  font-size: 52px;
+}
+
+.kopje3{
+  font-size: 52px;
+}
+
+
+
+
+
+
+
+
+#piechart{
+  width: 492px; 
+  height: 492px;
+  margin-left: 16%;
+  margin-top: 10px;
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.box .skill .graph1 .percent
+{
+ font-size: 28px;
+ top: -40px;  
+}
+
+
+.box .skill .graph2 .percent
+{
+  font-size: 28px;
+  top: -40px; 	
+}
+
+.box .skill .graph3 .percent
+{
+  font-size: 28px; 
+  top: -40px;
+}
+
+.box .skill .skillName
+{
+  bottom: -40px;
+}
+}
+
+.box .skill .graph1
+{
+	width: 189px;
+	height: 517px;
+	font-size: 32px;   
+}
+
+.box .skill .graph2
+{
+	width: 189px; 
+	height: 67px;
+	font-size: 32px; 
+}
+
+.box .skill .graph3
+{
+	width: 189px; 
+	height: 197px;
+	font-size: 32px; 
+}
+
+
+.box
+{
+  height: 570px;
+  width: 613px;
+  background: transparent;
+  font-family: Roboto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+}
 }
